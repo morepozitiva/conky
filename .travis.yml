@@ -16,8 +16,8 @@ addons:
     - libglib2.0-dev
     - libxml2-dev
     - libcurl4-gnutls-dev
-    - liblua5.1-0-dev
-    - libtolua++5.1-dev
+    - liblua5.3-0-dev
+    - libtolua++5.3-dev
     - libcairo2-dev
     - libimlib2-dev
     - libxinerama-dev
