@@ -38,12 +38,26 @@ include(ConkyPlatformChecks)
 # CPack module for installation tasks
 include(ConkyCPackSetup)
 
-if(CHECK_CODE_FORMAT)
+if(CHECK_CODE_QUALITY)
   # Set up clang-format
-  set(CLANG_FORMAT_BIN_NAME clang-format clang-format-5.0)
+  set(CLANG_FORMAT_BIN_NAME
+    clang-format
+    clang-format-5.0
+    clang-format-6.0
+    clang-format-7.0
+  )
   set(CLANG_FORMAT_EXCLUDE_PATTERNS  "build/" ${CMAKE_BINARY_DIR})
   find_package(ClangFormat)
-endif(CHECK_CODE_FORMAT)
+  # Set up clang-tidy
+  set(CLANG_TIDY_BIN_NAME
+    clang-tidy
+    clang-tidy-5.0
+    clang-tidy-6.0
+    clang-tidy-7.0
+  )
+  set(CLANG_TIDY_EXCLUDE_PATTERNS  "build/" ${CMAKE_BINARY_DIR})
+  find_package(ClangTidy)
+endif(CHECK_CODE_QUALITY)
 
 # setup our configuration headers
 configure_file(${CMAKE_MODULE_PATH}/config.h.in ${CMAKE_BINARY_DIR}/config.h)

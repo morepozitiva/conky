@@ -179,4 +179,4 @@ option(BUILD_JOURNAL "Enable support for reading from the systemd journal" false
 
 option(BUILD_PULSEAUDIO "Enable support for Pulseaudio's default sink and source" false)
 
-option(CHECK_CODE_FORMAT "Check code formatting with clang-format" false)
+option(CHECK_CODE_QUALITY "Check code formatting/quality with clang" false)
